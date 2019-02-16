@@ -1,12 +1,12 @@
 #include "Cargo.h"
 #include "Destination.h"
-#include "Truck.h"
 #include "Logistics.h"
+#include "RoadLogistics.h"
 
 #include <iostream>
 
 int main() {
-	Logistics logistics;
+	RoadLogistics roadLog;
 
 	Cargo c1("water", 500);
 	Cargo c2("juice", 1500);
@@ -14,8 +14,8 @@ int main() {
 	Destination d1("Ukraine", "Kyiv", "st. Illinska, 2", "01010");
 	Destination d2("Ukraine", "Kyiv", "st. Sagaidachnogo, 12", "12345");
 
-	logistics.planDelivery(c1, d1);
-	logistics.planDelivery(c2, d2);
+	roadLog.planDelivery(c1, d1);
+	roadLog.planDelivery(c2, d2);
 
 	return 0;
 }
