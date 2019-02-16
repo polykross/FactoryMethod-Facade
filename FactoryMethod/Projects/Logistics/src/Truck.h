@@ -10,16 +10,17 @@
 
 #include "Cargo.h"
 #include "Destination.h"
+#include "Transport.h"
 
-class Truck {
+class Truck : public Transport {
 public:
 	Truck();
-	~Truck();
+	~Truck() override;
 	Truck(const Truck&) = delete;
 	Truck& operator=(const Truck&) = delete;
 
 	unsigned int id() const;
-	void deliver(const Cargo& cargo, const Destination& dest);
+	void deliver(const Cargo& cargo, const Destination& dest) override;
 
 private:
 	static unsigned int freeId;

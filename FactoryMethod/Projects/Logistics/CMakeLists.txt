@@ -8,8 +8,11 @@ add_executable(Logistics    src/main.cpp
                             src/Cargo.cpp
                             src/Destination.h
                             src/Destination.cpp
+                            src/Transport.h
                             src/Truck.h
                             src/Truck.cpp
                             src/Logistics.h
                             src/Logistics.cpp
-                            )
+                            src/RoadLogistics.h
+                            src/RoadLogistics.cpp
+        src/Transport.cpp)
