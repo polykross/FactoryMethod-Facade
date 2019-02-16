@@ -10,4 +10,6 @@ add_executable(Logistics    src/main.cpp
                             src/Destination.cpp
                             src/Truck.h
                             src/Truck.cpp
+                            src/Logistics.h
+                            src/Logistics.cpp
                             )
