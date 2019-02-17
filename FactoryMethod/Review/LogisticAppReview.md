@@ -15,6 +15,6 @@ _But I think it **could be better** with adding id() method, which defined in al
 
 ## Summary
 
-- Logistic app **good** demonstrates **Factory Method** design pattern. Outside the target design pattern context it could be improved, but it is only **demonstration** of single pattern, so improvements outside the context isn't necessary.
+- Logistic app **well** demonstrates **Factory Method** design pattern. Outside the target design pattern context it could be improved, but it is only **demonstration** of single pattern, so improvements outside the context isn't necessary.
 
 - My **grade** for this demonstration **10\10**
