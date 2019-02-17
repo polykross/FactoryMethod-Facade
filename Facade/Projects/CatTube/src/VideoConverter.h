@@ -10,12 +10,17 @@
 
 class VideoConverter {
 public:
-	VideoConverter();
+	static VideoConverter* getInstance();
+
 	~VideoConverter();
 	VideoConverter(const VideoConverter&) = delete;
 	VideoConverter& operator=(const VideoConverter&) = delete;
 
 	VideoFile convertVideo(const std::string& filename, const std::string& format);
+
+private:
+	static VideoConverter* _instance;
+	VideoConverter();
 
 };
 

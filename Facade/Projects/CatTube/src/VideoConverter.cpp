@@ -6,6 +6,16 @@
 #include "VideoFramework/Codec.h"
 #include "VideoFramework/BitrateReader.h"
 
+VideoConverter* VideoConverter::_instance = 0;
+
+VideoConverter* VideoConverter::getInstance() {
+	if (_instance == 0) {
+		_instance = new VideoConverter();
+	}
+
+	return _instance;
+}
+
 VideoConverter::VideoConverter() = default;
 VideoConverter::~VideoConverter() = default;
 

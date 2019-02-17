@@ -19,8 +19,7 @@ const std::string& CatTubeAccount::nickname() const {
 }
 
 void CatTubeAccount::postVideo(const std::string& filename, const std::string& title) {
-	VideoConverter converter;
-	VideoFile postFile = converter.convertVideo(filename, format);
+	VideoFile postFile = VideoConverter::getInstance()->convertVideo(filename, format);
 	postFile.save();
 	std::cout << "User " << nickname() << " posted new video: " << title << std::endl;
 }
