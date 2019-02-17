@@ -15,4 +15,4 @@ add_executable(Logistics    src/main.cpp
                             src/Logistics.cpp
                             src/RoadLogistics.h
                             src/RoadLogistics.cpp
-        src/Transport.cpp)
+        src/Transport.cpp src/Ship.cpp src/Ship.h src/SeaLogistics.cpp src/SeaLogistics.h)
