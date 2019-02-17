@@ -4,8 +4,7 @@
 
 #include "CatTubeAccount.h"
 #include "VideoFramework/VideoFile.h"
-#include "VideoFramework/Codec.h"
-#include "VideoFramework/BitrateReader.h"
+#include "VideoConverter.h"
 #include <iostream>
 
 const std::string CatTubeAccount::format = "mp4";
@@ -20,12 +19,8 @@ const std::string& CatTubeAccount::nickname() const {
 }
 
 void CatTubeAccount::postVideo(const std::string& filename, const std::string& title) {
-	VideoFile file(filename);
-	Codec srcCodec(file);
-	Codec destCodec(format);
-	BitrateReader buffer(filename, srcCodec);
-	buffer.convertTo(destCodec);
-	VideoFile postFile = buffer.extract();
+	VideoConverter converter;
+	VideoFile postFile = converter.convertVideo(filename, format);
 	postFile.save();
 	std::cout << "User " << nickname() << " posted new video: " << title << std::endl;
 }
