@@ -38,3 +38,7 @@ build
 
 # CMake
 cmake-build-*
+
+# Visual studio
+
+.vs/
