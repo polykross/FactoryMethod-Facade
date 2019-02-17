@@ -17,7 +17,7 @@ public:
 	SeaLogistics(const SeaLogistics&) = delete;
 	SeaLogistics& operator=(const SeaLogistics&) = delete;
 
-	Transport* createTransport() const;
+	Transport* createTransport() const override;
 
 };
 
