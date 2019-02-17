@@ -19,7 +19,7 @@ public:
 	Truck(const Truck&) = delete;
 	Truck& operator=(const Truck&) = delete;
 
-	unsigned int id() const;
+	unsigned int id() const override;
 	void deliver(const Cargo& cargo, const Destination& dest) override;
 
 private:

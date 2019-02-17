@@ -15,6 +15,7 @@ public:
 	Transport(const Transport&) = delete;
 	Transport& operator=(const Transport&) = delete;
 
+	virtual unsigned int id() const = 0;
 	virtual void deliver(const Cargo& cargo, const Destination& dest) = 0;
 
 };

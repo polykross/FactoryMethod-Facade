@@ -20,7 +20,7 @@ public:
 	Ship(const Ship&) = delete;
 	Ship& operator=(const Ship&) = delete;
 
-	unsigned int id() const;
+	unsigned int id() const override;
 	void deliver(const Cargo& cargo, const Destination& dest) override;
 
 private:
