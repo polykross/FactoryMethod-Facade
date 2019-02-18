@@ -8,6 +8,10 @@ RoadLogistics::RoadLogistics() : Logistics() {}
 
 RoadLogistics::~RoadLogistics() = default;
 
-Transport* RoadLogistics::createTransport() const {
+Transport* RoadLogistics::getTransport() const {
 	return new Truck();
+}
+
+void RoadLogistics::returnTransport(Transport* transport) const {
+	delete transport;
 }

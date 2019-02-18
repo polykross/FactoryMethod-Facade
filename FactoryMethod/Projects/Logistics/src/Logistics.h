@@ -17,7 +17,8 @@ public:
 	Logistics& operator=(const Logistics&) = delete;
 
 	void planDelivery(const Cargo& cargo, const Destination& dest) const;
-	virtual Transport* createTransport() const = 0;
+	virtual Transport* getTransport() const = 0;
+	virtual void returnTransport(Transport*) const = 0;
 
 };
 

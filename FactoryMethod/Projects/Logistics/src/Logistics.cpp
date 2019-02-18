@@ -9,7 +9,7 @@ Logistics::Logistics() = default;
 Logistics::~Logistics() = default;
 
 void Logistics::planDelivery(const Cargo& cargo, const Destination& dest) const {
-	Transport* transport = createTransport();
+	Transport* transport = getTransport();
 	transport->deliver(cargo, dest);
-	delete transport;
+	returnTransport(transport);
 }
