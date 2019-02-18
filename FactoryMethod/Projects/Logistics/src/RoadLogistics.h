@@ -17,7 +17,8 @@ public:
 	RoadLogistics(const RoadLogistics&) = delete;
 	RoadLogistics& operator=(const RoadLogistics&) = delete;
 
-	Transport* createTransport() const override;
+	Transport* getTransport() const override;
+	void returnTransport(Transport*) const override;
 
 };
 
