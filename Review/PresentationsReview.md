@@ -18,31 +18,34 @@
 
 - Font is **bright** and **readable**
 
-- **Really nice** that presentation has comments almost for each slide
-
 - Diagrams are **present**
+
+- **Really nice** that presentation has comments almost for each slide
 
 - **Great** explanation with small amount of text on slides
 
+- **Convenient** that unrelated patterns were split to different presentations
+
 ## Content
 
-- **Good** idea with Git commands integration in presentation where we can go through commits and see project history accorindg to presentation
+- **Good** idea with Git commands integration in presentation\
+*Because we can go through commits and see project history according to the presentation*
 
 - **Relevant** examples:
-  - In **factory method** presentation exapmle with project, which always tents to changes even if customer says "It will be never changed"
-  - In **facade** presentation exapmle with facade that used for frameworks
+  - In **factory method** presentation example with project, which always changes even if customer says "It will be never changed"
+  - In presentation of **facade** it is clean example with frameworks
 
-- **Nice** that presentation even looks like workshop, where Polina show us design patterns **in action**
+- **Nice** that presentation looks like workshop, where all examples we can download and test in real time
+  1. Projects are uploaded on **GitHub**
+  2. Projects have **history**
+  3. **No** zip or rar **archives**
+  4. **Simple** to review because of 1,2,3 points
 
-- Pattern applicability **explained**
+- Patterns applicability, pros and cons were **explained**
 
-- Pattern proc and cons were **reviewed**
+- Related patterns were **surveyed**
 
 - **Brilliant** that Polina pointed about reusing and saving system resources with **factory method**
-
-- Related parrents were **surveyed**
-
-- **THANKS** Polina for uploading projects to **GitHub**, so we can watch through project history and upload it with single *clone* command
 
 ## Summary
 
