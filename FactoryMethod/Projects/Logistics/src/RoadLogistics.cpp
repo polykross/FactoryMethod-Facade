@@ -4,14 +4,14 @@
 
 #include "RoadLogistics.h"
 
-RoadLogistics::RoadLogistics() : Logistics() {}
+RoadLogistics::RoadLogistics() : Logistics(), _truckPool(TransportPool<Truck>::getInstance()) {}
 
 RoadLogistics::~RoadLogistics() = default;
 
 Transport* RoadLogistics::getTransport() const {
-	return new Truck();
+	return _truckPool.getResource();
 }
 
 void RoadLogistics::returnTransport(Transport* transport) const {
-	delete transport;
+	_truckPool.returnResource(static_cast<Truck*>(transport));
 }
