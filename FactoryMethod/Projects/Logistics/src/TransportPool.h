@@ -5,16 +5,15 @@
 #ifndef TRANSPORT_POOL_H
 #define TRANSPORT_POOL_H
 
-#include "Pool.h"
 #include <queue>
 
 template <class T>
-class TransportPool : public Pool<T> {
+class TransportPool {
 public:
 	static TransportPool<T>& getInstance();
 
 	TransportPool();
-	~TransportPool() override;
+	~TransportPool();
 	TransportPool(const TransportPool&) = delete;
 	TransportPool(const TransportPool&&) = delete;
 	TransportPool& operator=(const TransportPool&) = delete;
@@ -43,7 +42,7 @@ TransportPool<T>& TransportPool<T>::getInstance() {
 
 
 template <class T>
-TransportPool<T>::TransportPool() : Pool<T>(), _capacity(_defaultCapacity){
+TransportPool<T>::TransportPool() : _capacity(_defaultCapacity){
 	fill(_capacity);
 }
 

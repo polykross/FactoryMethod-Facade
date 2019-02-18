@@ -20,6 +20,5 @@ add_executable(Logistics    src/main.cpp
 							src/Ship.h 
 							src/SeaLogistics.cpp 
 							src/SeaLogistics.h
-							src/Pool.h
 							src/TransportPool.h
 )
