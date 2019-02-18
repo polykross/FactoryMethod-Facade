@@ -4,14 +4,14 @@
 
 #include "SeaLogistics.h"
 
-SeaLogistics::SeaLogistics() : Logistics() {}
+SeaLogistics::SeaLogistics() : Logistics(), _shipPool(TransportPool<Ship>::getInstance()) {}
 
 SeaLogistics::~SeaLogistics() = default;
 
 Transport* SeaLogistics::getTransport() const {
-	return new Ship();
+	return _shipPool.getResource();
 }
 
 void SeaLogistics::returnTransport(Transport* ship) const {
-	delete ship;
+	_shipPool.returnResource(static_cast<Ship*>(ship));
 }
