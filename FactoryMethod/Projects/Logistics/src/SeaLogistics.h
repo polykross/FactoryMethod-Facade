@@ -9,6 +9,7 @@
 #include "Cargo.h"
 #include "Destination.h"
 #include "Logistics.h"
+#include "TransportPool.h"
 
 class SeaLogistics : public Logistics {
 public:
@@ -19,7 +20,8 @@ public:
 
 	Transport* getTransport() const override;
 	void returnTransport(Transport*) const override;
-
+private:
+	TransportPool<Ship>& _shipPool;
 };
 
 
