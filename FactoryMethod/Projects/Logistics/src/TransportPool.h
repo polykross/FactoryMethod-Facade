@@ -11,6 +11,8 @@
 template <class T>
 class TransportPool : public Pool<T> {
 public:
+	static TransportPool<T>& getInstance();
+
 	TransportPool();
 	~TransportPool() override;
 	TransportPool(const TransportPool&) = delete;
@@ -21,11 +23,24 @@ public:
 	T* getResource();
 	void returnResource(T*);
 private:
+	static TransportPool<T>* _instance;
 	const int _defaultCapacity = 16;
 	std::queue<T*> _resources;
 	int _capacity;
 	void fill(const int n);
 };
+
+template <class T>
+TransportPool<T>* TransportPool<T>::_instance = 0;
+
+template <class T>
+TransportPool<T>& TransportPool<T>::getInstance() {
+	if (_instance == 0) {
+		TransportPool<T>::_instance = new TransportPool<T>;
+	}
+	return *_instance;
+}
+
 
 template <class T>
 TransportPool<T>::TransportPool() : Pool<T>(), _capacity(_defaultCapacity){
