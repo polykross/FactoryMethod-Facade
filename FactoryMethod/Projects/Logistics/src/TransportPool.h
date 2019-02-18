@@ -5,6 +5,7 @@
 #ifndef TRANSPORT_POOL_H
 #define TRANSPORT_POOL_H
 
+#include "Pool.h"
 #include <queue>
 
 template <class T>
