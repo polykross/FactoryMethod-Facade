@@ -17,12 +17,50 @@ public:
 	TransportPool& operator=(const TransportPool&) = delete;
 	TransportPool&& operator=(const TransportPool&&) = delete;
 
-	T* getResource() override;
-	void returnResource(T*) override;
+	T* getResource();
+	void returnResource(T*);
 private:
 	const int _defaultCapacity = 16;
-	std::queue<T> resources;
+	std::queue<T*> _resources;
 	int _capacity;
+	void fill(const int n);
 };
+
+template <class T>
+TransportPool<T>::TransportPool() : Pool<T>(), _capacity(_defaultCapacity){
+	fill(_capacity);
+}
+
+template <class T>
+TransportPool<T>::~TransportPool() {
+	while (!_resources.empty()) {
+		T* resource = _resources.front();
+		_resources.pop();
+		delete resource;
+	}
+}
+
+template <class T>
+T* TransportPool<T>::getResource() {
+	if (_resources.empty()) {
+		fill(_capacity);
+		_capacity += _capacity;
+	}
+	T* result = _resources.front();
+	_resources.pop();
+	return result;
+}
+
+template <class T>
+void TransportPool<T>::returnResource(T* res) {
+	_resources.push(res);
+}
+
+template <class T>
+void TransportPool<T>::fill(const int n) {
+	for (int i = 0; i < n; ++i) {
+		_resources.push(new T);
+	}
+}
 
 #endif // TRANSPORT_POOL_H
