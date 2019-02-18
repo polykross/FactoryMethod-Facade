@@ -16,6 +16,7 @@ Codec::Codec(const Codec& other) : _format(other.format()) {}
 
 Codec& Codec::operator=(const Codec& other) {
 	_format = other.format();
+	return *this;
 }
 
 const std::string& Codec::format() const {
