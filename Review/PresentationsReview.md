@@ -45,11 +45,14 @@
 
 - Related patterns were **surveyed**
 
-- **Brilliant** that Polina pointed about reusing and saving system resources with **factory method**
+- Also **very well** that Polina pointed about ability to reuse and save system resources with **factory method**
+
+- **Once more** about GitHub. We can see not only project history but also how it becomes better with design patterns
+  - We may see how CatTube "grows" to inventing Facade method for CatTubeAccount after using framework directly in this class
 
 ## Summary
 
-- Presentations structure is **perfect** and have no problems
+- Presentations structure is **brilliant** and have no problems
 
 - Content is **clear** and fully explains design patterns
 
