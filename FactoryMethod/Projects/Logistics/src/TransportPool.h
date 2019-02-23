@@ -6,6 +6,7 @@
 #define TRANSPORT_POOL_H
 
 #include <queue>
+#include <mutex>
 
 template <class T>
 class TransportPool {
@@ -35,7 +36,10 @@ TransportPool<T>* TransportPool<T>::_instance = 0;
 template <class T>
 TransportPool<T>& TransportPool<T>::getInstance() {
 	if (_instance == 0) {
-		TransportPool<T>::_instance = new TransportPool<T>;
+		std::lock_guard<std::mutex> lockGuard(std::mutex);
+		if (_instance == 0) {
+			TransportPool<T>::_instance = new TransportPool<T>;
+		}
 	}
 	return *_instance;
 }
