@@ -4,21 +4,21 @@ project(Logistics)
 set(CMAKE_CXX_STANDARD 11)
 
 add_executable(Logistics    src/main.cpp
+							src/transport/Transport.h
+                            src/transport/Truck.h
+                            src/transport/Truck.cpp
+							src/transport/Transport.cpp 
+							src/transport/Ship.cpp 
+							src/transport/Ship.h 
+							src/logistic/Logistics.h
+                            src/logistic/Logistics.cpp
+                            src/logistic/RoadLogistics.h
+                            src/logistic/RoadLogistics.cpp
+							src/logistic/SeaLogistics.cpp 
+							src/logistic/SeaLogistics.h
                             src/Cargo.h
                             src/Cargo.cpp
                             src/Destination.h
-                            src/Destination.cpp
-                            src/Transport.h
-                            src/Truck.h
-                            src/Truck.cpp
-                            src/Logistics.h
-                            src/Logistics.cpp
-                            src/RoadLogistics.h
-                            src/RoadLogistics.cpp
-							src/Transport.cpp 
-							src/Ship.cpp 
-							src/Ship.h 
-							src/SeaLogistics.cpp 
-							src/SeaLogistics.h
-							src/TransportPool.h
+                            src/Destination.cpp                            
+							src/storage/TransportPool.h
 )

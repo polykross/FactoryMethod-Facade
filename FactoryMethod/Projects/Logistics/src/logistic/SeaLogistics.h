@@ -5,11 +5,11 @@
 #ifndef LOGISTICS_SEALOGISTICS_H
 #define LOGISTICS_SEALOGISTICS_H
 
-#include "Ship.h"
+#include "transport/Ship.h"
 #include "Cargo.h"
 #include "Destination.h"
 #include "Logistics.h"
-#include "TransportPool.h"
+#include "storage/TransportPool.h"
 
 class SeaLogistics : public Logistics {
 public:

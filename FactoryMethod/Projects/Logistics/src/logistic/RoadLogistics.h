@@ -5,11 +5,11 @@
 #ifndef LOGISTICS_ROAD_LOGISTICS_H
 #define LOGISTICS_ROAD_LOGISTICS_H
 
-#include "Truck.h"
+#include "transport/Truck.h"
 #include "Cargo.h"
 #include "Destination.h"
 #include "Logistics.h"
-#include "TransportPool.h"
+#include "storage/TransportPool.h"
 
 class RoadLogistics : public Logistics {
 public:

@@ -1,8 +1,5 @@
-#include "Cargo.h"
-#include "Destination.h"
-#include "Logistics.h"
-#include "RoadLogistics.h"
-#include "SeaLogistics.h"
+#include "logistic/RoadLogistics.h"
+#include "logistic/SeaLogistics.h"
 
 #include <iostream>
 

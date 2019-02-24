@@ -5,7 +5,7 @@
 #ifndef LOGISTICS_LOGISTICS_H
 #define LOGISTICS_LOGISTICS_H
 
-#include "Transport.h"
+#include "transport/Transport.h"
 #include "Cargo.h"
 #include "Destination.h"
 
