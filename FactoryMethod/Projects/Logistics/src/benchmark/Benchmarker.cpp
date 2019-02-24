@@ -8,7 +8,7 @@ Benchmarker::Benchmarker(
 ) : _cargo(cargo),
 	_logistics(logistics), 
 	_destination(destination), 
-	_storage(storage) 
+	_storage(storage)
 {}
 
 void Benchmarker::deliver() {
