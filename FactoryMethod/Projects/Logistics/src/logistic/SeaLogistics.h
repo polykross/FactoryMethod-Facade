@@ -18,6 +18,7 @@ public:
 	SeaLogistics(const SeaLogistics&) = delete;
 	SeaLogistics& operator=(const SeaLogistics&) = delete;
 
+protected:
 	Transport* getTransport() const override;
 	void returnTransport(Transport*) const override;
 private:
