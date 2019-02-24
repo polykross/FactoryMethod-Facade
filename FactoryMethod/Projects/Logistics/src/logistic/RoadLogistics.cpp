@@ -3,9 +3,8 @@
 //
 
 #include "RoadLogistics.h"
-#include "../storage/TransportPool.h"
 
-RoadLogistics::RoadLogistics() : Logistics(), _truckStorage(TransportPool<Truck>::getInstance()) {}
+RoadLogistics::RoadLogistics(Storage<Truck>& storage) : Logistics(), _truckStorage(storage) {}
 
 RoadLogistics::~RoadLogistics() = default;
 

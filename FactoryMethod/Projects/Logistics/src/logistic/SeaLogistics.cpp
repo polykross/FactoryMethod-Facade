@@ -3,9 +3,8 @@
 //
 
 #include "SeaLogistics.h"
-#include "../storage/TransportPool.h"
 
-SeaLogistics::SeaLogistics() : Logistics(), _shipStorage(TransportPool<Ship>::getInstance()) {}
+SeaLogistics::SeaLogistics(Storage<Ship>& storage) : Logistics(), _shipStorage(storage) {}
 
 SeaLogistics::~SeaLogistics() = default;
 

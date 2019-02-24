@@ -13,7 +13,7 @@
 
 class SeaLogistics : public Logistics {
 public:
-	SeaLogistics();
+	SeaLogistics(Storage<Ship>&);
 	~SeaLogistics() override;
 	SeaLogistics(const SeaLogistics&) = delete;
 	SeaLogistics& operator=(const SeaLogistics&) = delete;

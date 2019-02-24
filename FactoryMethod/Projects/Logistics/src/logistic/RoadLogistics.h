@@ -13,7 +13,7 @@
 
 class RoadLogistics : public Logistics {
 public:
-	RoadLogistics();
+	RoadLogistics(Storage<Truck>&);
 	~RoadLogistics() override;
 	RoadLogistics(const RoadLogistics&) = delete;
 	RoadLogistics& operator=(const RoadLogistics&) = delete;

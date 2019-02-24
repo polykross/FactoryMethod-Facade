@@ -1,11 +1,12 @@
 #include "logistic/RoadLogistics.h"
 #include "logistic/SeaLogistics.h"
+#include "storage/TransportPool.h"
 
 #include <iostream>
 
 int main() {
-	RoadLogistics roadLog;
-	SeaLogistics seaLog;
+	RoadLogistics roadLog(TransportPool<Truck>::getInstance());
+	SeaLogistics seaLog(TransportPool<Ship>::getInstance());
 
 	Cargo c1("water", 500);
 	Cargo c2("juice", 1500);
