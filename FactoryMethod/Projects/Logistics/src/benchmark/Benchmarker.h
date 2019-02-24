@@ -17,7 +17,9 @@ public:
 	);
 
 	void deliver();
+	void flushInfo();
 private:
+	size_t _deliverNumber;
 	Cargo& _cargo;
 	Logistics& _logistics;
 	Destination& _destination;
