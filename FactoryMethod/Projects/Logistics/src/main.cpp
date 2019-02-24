@@ -1,6 +1,7 @@
 #include "logistic/RoadLogistics.h"
 #include "logistic/SeaLogistics.h"
 #include "storage/TransportPool.h"
+#include "storage/TransportStorage.h"
 
 #include <iostream>
 

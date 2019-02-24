@@ -24,15 +24,15 @@ public:
 	T* getResource() override;
 	void returnResource(T*) override;
 	bool isEmpty() const override;
-	int getCapacity() const override;
-	int getItemsCount() const override;
+	size_t getCapacity() const override;
+	size_t getItemsCount() const override;
 	~TransportPool() override;
 private:
 	static TransportPool<T>* _instance;
-	const int _defaultCapacity = 16;
+	const size_t _defaultCapacity = 16;
 	std::queue<T*> _resources;
-	int _capacity;
-	void fill(const int n);
+	size_t _capacity;
+	void fill(const size_t n);
 };
 
 template <class T>
@@ -41,7 +41,8 @@ TransportPool<T>* TransportPool<T>::_instance = 0;
 template <class T>
 TransportPool<T>& TransportPool<T>::getInstance() {
 	if (_instance == 0) {
-		std::lock_guard<std::mutex> lockGuard(std::mutex());
+		std::mutex m;
+		std::lock_guard<std::mutex> lockGuard(m);
 		if (_instance == 0) {
 			TransportPool<T>::_instance = new TransportPool<T>;
 		}
@@ -86,18 +87,18 @@ bool TransportPool<T>::isEmpty() const {
 }
 
 template <class T>
-int TransportPool<T>::getCapacity() const {
+size_t TransportPool<T>::getCapacity() const {
 	return _capacity;
 }
 
 template <class T>
-int TransportPool<T>::getItemsCount() const {
+size_t TransportPool<T>::getItemsCount() const {
 	return _resources.size();
 }
 
 template <class T>
-void TransportPool<T>::fill(const int n) {
-	for (int i = 0; i < n; ++i) {
+void TransportPool<T>::fill(const size_t n) {
+	for (size_t i = 0; i < n; ++i) {
 		_resources.push(new T);
 	}
 }
