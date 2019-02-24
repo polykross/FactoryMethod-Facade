@@ -21,4 +21,5 @@ add_executable(Logistics    src/main.cpp
                             src/Destination.h
                             src/Destination.cpp                            
 							src/storage/TransportPool.h
+							src/storage/Storage.h
 )

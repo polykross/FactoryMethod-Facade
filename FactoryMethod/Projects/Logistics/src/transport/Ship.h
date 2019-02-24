@@ -9,8 +9,8 @@
 #include <string>
 #include <iostream>
 
-#include "Cargo.h"
-#include "Destination.h"
+#include "../Cargo.h"
+#include "../Destination.h"
 #include "Transport.h"
 
 class Ship : public Transport {

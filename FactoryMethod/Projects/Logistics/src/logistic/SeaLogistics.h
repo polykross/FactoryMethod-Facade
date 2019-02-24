@@ -5,11 +5,11 @@
 #ifndef LOGISTICS_SEALOGISTICS_H
 #define LOGISTICS_SEALOGISTICS_H
 
-#include "transport/Ship.h"
-#include "Cargo.h"
-#include "Destination.h"
+#include "../transport/Ship.h"
+#include "../Cargo.h"
+#include "../Destination.h"
 #include "Logistics.h"
-#include "storage/TransportPool.h"
+#include "../storage/Storage.h"
 
 class SeaLogistics : public Logistics {
 public:
@@ -21,7 +21,7 @@ public:
 	Transport* getTransport() const override;
 	void returnTransport(Transport*) const override;
 private:
-	TransportPool<Ship>& _shipPool;
+	Storage<Ship>& _shipStorage;
 };
 
 

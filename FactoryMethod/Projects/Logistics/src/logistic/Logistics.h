@@ -5,9 +5,9 @@
 #ifndef LOGISTICS_LOGISTICS_H
 #define LOGISTICS_LOGISTICS_H
 
-#include "transport/Transport.h"
-#include "Cargo.h"
-#include "Destination.h"
+#include "../transport/Transport.h"
+#include "../Cargo.h"
+#include "../Destination.h"
 
 class Logistics {
 public:

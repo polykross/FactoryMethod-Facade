@@ -3,15 +3,16 @@
 //
 
 #include "RoadLogistics.h"
+#include "../storage/TransportPool.h"
 
-RoadLogistics::RoadLogistics() : Logistics(), _truckPool(TransportPool<Truck>::getInstance()) {}
+RoadLogistics::RoadLogistics() : Logistics(), _truckStorage(TransportPool<Truck>::getInstance()) {}
 
 RoadLogistics::~RoadLogistics() = default;
 
 Transport* RoadLogistics::getTransport() const {
-	return _truckPool.getResource();
+	return _truckStorage.getResource();
 }
 
 void RoadLogistics::returnTransport(Transport* transport) const {
-	_truckPool.returnResource(static_cast<Truck*>(transport));
+	_truckStorage.returnResource(static_cast<Truck*>(transport));
 }

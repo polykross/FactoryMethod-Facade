@@ -3,15 +3,16 @@
 //
 
 #include "SeaLogistics.h"
+#include "../storage/TransportPool.h"
 
-SeaLogistics::SeaLogistics() : Logistics(), _shipPool(TransportPool<Ship>::getInstance()) {}
+SeaLogistics::SeaLogistics() : Logistics(), _shipStorage(TransportPool<Ship>::getInstance()) {}
 
 SeaLogistics::~SeaLogistics() = default;
 
 Transport* SeaLogistics::getTransport() const {
-	return _shipPool.getResource();
+	return _shipStorage.getResource();
 }
 
 void SeaLogistics::returnTransport(Transport* ship) const {
-	_shipPool.returnResource(static_cast<Ship*>(ship));
+	_shipStorage.returnResource(static_cast<Ship*>(ship));
 }
