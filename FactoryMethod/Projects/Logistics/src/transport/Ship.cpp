@@ -15,7 +15,7 @@ unsigned int Ship::id() const {
 }
 
 void Ship::deliver(const Cargo& cargo, const Destination& dest) {
-	std::cout << "Deliver " << cargo << " to " << dest << " by " << *this << " using the sea" << std::endl;
+	// std::cout << "Deliver " << cargo << " to " << dest << " by " << *this << " using the sea" << std::endl;
 }
 
 std::ostream& operator<<(std::ostream& os, const Ship& truck) {

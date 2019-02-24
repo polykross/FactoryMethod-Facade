@@ -24,5 +24,4 @@ add_executable(Logistics    src/main.cpp
 							src/storage/TransportStorage.h
 							src/storage/Storage.h
 							src/benchmark/Benchmarker.h
-							src/benchmark/Benchmarker.cpp
 )

@@ -2,10 +2,20 @@
 #include "logistic/SeaLogistics.h"
 #include "storage/TransportPool.h"
 #include "storage/TransportStorage.h"
+#include "benchmark/Benchmarker.h"
 
 #include <iostream>
 
+void simpleExmaple();
+void benchmarking();
+
 int main() {
+	// simpleExpample();
+	benchmarking();
+	return 0;
+}
+
+void simpleExpample() {
 	RoadLogistics roadLog(TransportPool<Truck>::getInstance());
 	SeaLogistics seaLog(TransportPool<Ship>::getInstance());
 
@@ -17,6 +27,19 @@ int main() {
 
 	roadLog.planDelivery(c1, d1);
 	seaLog.planDelivery(c2, d2);
+}
 
-	return 0;
+void benchmarking() {
+	RoadLogistics roadLog(TransportPool<Truck>::getInstance());
+	SeaLogistics seaLog(TransportStorage<Ship>::getInstance());
+	Cargo c1("water", 500);
+	Destination d1("Ukraine", "Kyiv", "st. Illinska, 2", "01010");
+
+	Benchmarker<Truck> poolBench(c1, roadLog, d1, TransportPool<Truck>::getInstance());
+	Benchmarker<Ship> storageBench(c1, seaLog, d1, TransportStorage<Ship>::getInstance());
+
+	std::cout << "Object pool benchmarking: " << std::endl;
+	poolBench.simulateDelivering(50);
+	std::cout << "Storage benchmarking: " << std::endl;
+	storageBench.simulateDelivering(50);
 }
