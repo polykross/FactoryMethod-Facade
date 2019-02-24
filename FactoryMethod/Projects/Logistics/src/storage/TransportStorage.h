@@ -66,10 +66,7 @@ TransportStorage<T>::~TransportStorage() {
 
 template <class T>
 T* TransportStorage<T>::getResource() {
-	if (_resources.empty()) {
-		_capacity += _capacity;
-		fill();
-	}
+	if (_resources.empty()) fill();
 	T* result = _resources.front();
 	_resources.pop();
 	return result;
@@ -87,7 +84,7 @@ bool TransportStorage<T>::isEmpty() const {
 
 template <class T>
 size_t TransportStorage<T>::getCapacity() const {
-	return _capacity;
+	return _resources.size();
 }
 
 template <class T>
