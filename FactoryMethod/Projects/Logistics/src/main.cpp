@@ -17,7 +17,7 @@ int main() {
 
 void simpleExample() {
 	RoadLogistics roadLog(TransportPool<Truck>::getInstance());
-	SeaLogistics seaLog(TransportPool<Ship>::getInstance());
+	SeaLogistics seaLog(TransportStorage<Ship>::getInstance());
 
 	Cargo c1("water", 500);
 	Cargo c2("juice", 1500);
