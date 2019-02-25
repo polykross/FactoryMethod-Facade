@@ -27,6 +27,7 @@ public:
 	size_t getCapacity() const override;
 	size_t getItemsCount() const override;
 	~TransportPool() override;
+	void reset();
 private:
 	static TransportPool<T>* _instance;
 	const size_t _defaultCapacity = 16;
@@ -101,6 +102,17 @@ void TransportPool<T>::fill(const size_t n) {
 	for (size_t i = 0; i < n; ++i) {
 		_resources.push(new T);
 	}
+}
+
+template <class T>
+void TransportPool<T>::reset() {
+	while (!_resources.empty()) {
+		T* resource = _resources.front();
+		_resources.pop();
+		delete resource;
+	}
+	_capacity = _defaultCapacity;
+	fill(_capacity);
 }
 
 #endif // TRANSPORT_POOL_H

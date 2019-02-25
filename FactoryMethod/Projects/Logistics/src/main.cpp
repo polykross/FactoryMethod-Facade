@@ -6,16 +6,16 @@
 
 #include <iostream>
 
-void simpleExmaple();
+void simpleExample();
 void benchmarking();
 
 int main() {
-	// simpleExpample();
+	simpleExample();
 	benchmarking();
 	return 0;
 }
 
-void simpleExpample() {
+void simpleExample() {
 	RoadLogistics roadLog(TransportPool<Truck>::getInstance());
 	SeaLogistics seaLog(TransportPool<Ship>::getInstance());
 
@@ -42,4 +42,6 @@ void benchmarking() {
 	poolBench.simulateDelivering(50);
 	std::cout << "Storage benchmarking: " << std::endl;
 	storageBench.simulateDelivering(50);
+
+	TransportPool<Truck>::getInstance().reset();
 }
